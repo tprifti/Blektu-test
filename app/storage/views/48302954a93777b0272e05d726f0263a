@@ -1,0 +1,38 @@
+<!--<?php echo Form::model($user, ['method' => 'PATCH', 'route' => ['admins.edit', $user->id]]); ?>-->
+<?php echo Form::open(array('method' => 'PATCH','route'=> array('admins.update', $user->id))); ?>
+
+
+
+	<div>
+		<?php echo Form::label('firstname', 'Firstame:'); ?>
+
+		<?php echo Form::text('firstname'); ?>
+
+	</div>
+	<div>
+		<?php echo Form::label('lastname', 'Lastname:'); ?>
+
+		<?php echo Form::text('lastname'); ?>
+
+	</div>
+	<div>
+		<?php echo Form::label('address1', 'Edit Adress 1 :'); ?>
+
+		<?php echo Form::text('address1'); ?>
+
+	</div>
+	<div>
+		<?php echo Form::label('address2', 'Edit Adress 2 :'); ?>
+
+		<?php echo Form::text('address2'); ?>
+
+	</div>
+
+	<div>
+		<?php echo Form::submit('Update User'); ?>
+
+	</div>
+
+
+
+<?php echo Form::close(); ?>

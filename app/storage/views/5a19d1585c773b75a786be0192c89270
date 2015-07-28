@@ -1,0 +1,17 @@
+<h2>Welcome : <?php echo $user->firstname; ?></h2>
+
+
+<hr>
+<?php foreach($user->items as $item): ?>
+	<h3>Your Items are : <i><?php echo $item->name; ?></i></h3>
+	
+	<h3>Description : <i><?php echo $item->description; ?></i></h3>
+	
+	<h3>Price : <i><?php echo $item->price; ?></i></h3>
+	
+	<h3>Brand : <i><?php echo $item->brand; ?></i></h3>
+	
+	<h3>Ngjyra : <i><?php echo $item->color_ID; ?></i></h3>
+	
+
+<?php endforeach; ?>

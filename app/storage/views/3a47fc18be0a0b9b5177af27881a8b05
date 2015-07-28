@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+    </head>
+
+    <body>
+
+    <button type="button" onclick="window.location='<?php echo route("all.users"); ?>'">All Users</button>
+
+    <h1>Welcome: <?php echo Auth::admin()->get()->username; ?></h1>
+    <h1>Emaili jot eshte: <?php echo Auth::admin()->get()->email; ?></h1>
+    
+    
+    
+    </body>
+
+
+</html>

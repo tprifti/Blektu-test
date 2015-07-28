@@ -1,0 +1,17 @@
+<?php echo Form::open(array('route' => 'admins.store')); ?>
+
+<h1>ADMIN LOGIN </h1>
+<?php echo Form::label('username', 'Username'); ?>
+
+<?php echo Form::text('username'); ?>
+
+<?php echo Form::label('password', 'Password'); ?>
+
+<?php echo Form::password('password'); ?>
+
+<?php echo Form::submit('Login'); ?>
+
+<?php echo $errors->first(); ?>
+
+
+<?php echo Form::close(); ?>
