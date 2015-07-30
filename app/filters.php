@@ -48,6 +48,17 @@ Route::filter('auth', function()
 	}
 });
 
+
+/*
+ * AUTH FOR USER TEST
+ *
+ */
+Route::filter('auth.test', function()
+	{
+		if (Auth::user()->guest()) return Redirect::guest('login');
+	});
+
+
 Route::filter('admin.auth', function()
 	{
 		if (Auth::admin()->guest()) return Redirect::guest('admin');

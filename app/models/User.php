@@ -24,8 +24,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         'lastname',
         'password',
         'password_repeat',
-        'address1',
-        'address2',
+        // 'address1',
+        // 'address2',
 
     ];
 
@@ -34,7 +34,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         'email' => 'required|email|unique:users',
         'firstname' => 'required',
         'lastname' => 'required',
-        'password' => 'required|alpha_num|min:6|numeric',
+        'password' => 'required|alpha_num|min:6|',
         'password_repeat' => 'required|same:password'
     ];
     public $errors;

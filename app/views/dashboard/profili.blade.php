@@ -13,3 +13,4 @@
 <h3>PHONE :		{{$user->phone}} </h3>
 
 {{ link_to_route('admins.edit', 'Edit User', $user->id)}}
+{{ link_to_route('ask.user', 'Delete User', $user->id)}}

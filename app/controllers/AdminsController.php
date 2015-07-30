@@ -52,9 +52,8 @@ public function create()
 
 public function edit($id){
 
-$user = User::Find($id);
+$user = User::find($id);
 
-;
 return View::make('edituser')->with('user', $user);
 }
 

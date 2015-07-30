@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <li><?php echo $user->get()->username; ?></li>
-        <li><?php echo $user->get()->firstname; ?></li>
-            <?php echo $user->get()->lastname; ?>
+        <li><?php echo Auth::user()->get()->username; ?></li>
+        <li><?php echo Auth::user()->get()->firstname; ?></li>
+            <?php echo Auth::user()->get()->lastname; ?>
 
 
     </body>

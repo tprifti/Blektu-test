@@ -33,7 +33,7 @@ class UserController extends BaseController
 
             $user->save();
 
-            return Redirect::to("/user/{$user->username}");
+            return Redirect::to('/user');
         } else {
             return Redirect::back()->withInput()->withErrors($this->user->errors);
         }

@@ -6,9 +6,9 @@
     </head>
 
     <body>
-        <li>{{$user->get()->username}}</li>
-        <li>{{$user->get()->firstname}}</li>
-            {{$user->get()->lastname}}
+        <li>{{Auth::user()->get()->username}}</li>
+        <li>{{Auth::user()->get()->firstname}}</li>
+            {{Auth::user()->get()->lastname}}
 
     </body>
 
