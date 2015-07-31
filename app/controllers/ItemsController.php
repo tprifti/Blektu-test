@@ -10,8 +10,12 @@ class ItemsController extends \BaseController
      */
     public function index()
     {
-        $items = Auth::user()->items;
-        return View::make('test', ['items' => $items]);
+        /*$items = Items::all();
+        //$items = Auth::user()->get()->items;
+        //return View::make('test', ['items' => $items]);
+        return $items;*/
+
+
     }
 
 
@@ -43,9 +47,9 @@ class ItemsController extends \BaseController
      * @param  int $id
      * @return Response
      */
-    public function show($id)
+    public function show($username)
     {
-        $item = Auth::user()->items()->where('id', $id)->first();
+        /*$item = Auth::user()->items()->where('id', $id)->first();
 
         if ($item == null) {
             App::abort(404, 'Item not found');
@@ -65,7 +69,10 @@ class ItemsController extends \BaseController
             'category' => $category,
             'condition' => $condition,
             'image_path' => $image_path
-        ]);
+        ]);*/
+    $user = User::where('username', $username)->first();
+
+    return View::make('test')->with('user', $user);
     }
 
 
@@ -77,7 +84,9 @@ class ItemsController extends \BaseController
      */
     public function edit($id)
     {
-        //
+        $item = Items::find($id);
+
+return View::make('edititem')->with('item', $item);
     }
 
 
@@ -89,7 +98,11 @@ class ItemsController extends \BaseController
      */
     public function update($id)
     {
-        //
+        $item = Items::find($id);
+
+  $item->fill(Input::All());
+  $item->save();
+  return View::make('profile');
     }
 
 

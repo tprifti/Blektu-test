@@ -43,4 +43,11 @@ class Items extends Eloquent
         return DB::table('images')->select('image')
             ->where('item_id', $this->id)->first()->image;
     }
+
+    public static $rules = [
+        'name' => 'required',
+        'description' => 'required',
+        'price' => 'required',
+        ];
+
 }

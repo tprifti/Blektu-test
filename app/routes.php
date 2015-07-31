@@ -12,6 +12,14 @@ Route::group(['before' => 'auth.test'], function () {
  Route::get('/user/create', 'UserController@create');
  Route::post('/user/create', 'UserController@store');
 
+// USER CAN EDIT ITEMS
+ Route::group(['before' => 'auth.test'], function () {
+
+    Route::get('/items/{username}', 'ItemsController@show');
+    Route::get('/items/{id}/edit', 'ItemsController@edit');
+
+});
+
 
 
 /**
@@ -74,6 +82,9 @@ Route::any('admin/logout', function () {
 
 });
 
+
+Route::get('/items/{username}', 'ItemsController@show');
+Route::get('/items/{id}/edit', 'ItemsController@edit');
 
 
 

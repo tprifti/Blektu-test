@@ -41,11 +41,11 @@ class UserController extends BaseController
 
     public function show($username)
     {
-        $user = $this->user->whereUsername($username)->first();
+       $user = $this->user->whereUsername($username)->first();
 
-        if (!$user) {
+        /*if (!$user) {
             App::abort(404, 'User not found');
-        }
+        }*/
 
         return View::make('profile', ['user' => $user]);
     }
