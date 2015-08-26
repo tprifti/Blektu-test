@@ -47,10 +47,18 @@ Route::filter('auth', function()
 		}
 	}
 });
+/*
+ * Filter for admin test
+ *
+ */
+Route::filter('admin.auth', function()
+	{
+		if (Auth::admin()->guest()) return Redirect::guest('admin');
+	});
 
 
 /*
- * AUTH FOR USER TEST
+ * Filter for user test
  *
  */
 Route::filter('auth.test', function()
@@ -58,11 +66,6 @@ Route::filter('auth.test', function()
 		if (Auth::user()->guest()) return Redirect::guest('login');
 	});
 
-
-Route::filter('admin.auth', function()
-	{
-		if (Auth::admin()->guest()) return Redirect::guest('admin');
-	});
 
 
 Route::filter('auth.basic', function()

@@ -1,0 +1,21 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   app/controllers/AdminsController.php
+#	modified:   app/controllers/ItemsController.php
+#	modified:   app/controllers/LoginController.php
+#	modified:   app/controllers/PanelController.php
+#	modified:   app/controllers/UserController.php
+#	modified:   app/routes.php
+#	deleted:    app/views/deleted.blade.php
+#	deleted:    app/views/edititem.blade.php
+#	deleted:    app/views/item.blade.php
+#	deleted:    app/views/itemregister.blade.php
+#	modified:   app/views/profile.blade.php
+#	modified:   app/views/test.blade.php
+#
+

@@ -15,6 +15,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return $this->hasMany('Items', 'user_ID', 'id');
     }
 
+
     protected $guarded = array('id', 'phone');
 
     protected $fillable = [
@@ -72,5 +73,4 @@ class User extends Eloquent implements UserInterface, RemindableInterface
         return false;
 
     }
-
 }

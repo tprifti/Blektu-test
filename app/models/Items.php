@@ -7,11 +7,38 @@ class Items extends Eloquent
         'id',
     ];
 
+
+
+    protected $fillable = [
+        'name',
+        'description',
+        'price',
+        'brand',
+        'condition_ID',
+        'category_ID',
+        'color_ID',
+        'size_ID'
+    ];
+
+    public static $rules = [
+        'name' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/|max:50',
+        'description' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
+        'price' => 'required|numeric',
+        'brand' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
+        'condition_ID' => 'required',
+        'category_ID' => 'required',
+        'color_ID' => 'required',
+        'size_ID' => 'required'
+        
+
+    ];
+
+    
     protected $table = 'items';
 
     public function user()
     {
-        return $this->belongsTo('User', 'user_ID', 'id');
+        return $this->hasOne('User', 'user_ID', 'id');
     }
 
     public function getSize()
@@ -44,10 +71,8 @@ class Items extends Eloquent
             ->where('item_id', $this->id)->first()->image;
     }
 
-    public static $rules = [
-        'name' => 'required',
-        'description' => 'required',
-        'price' => 'required',
-        ];
+    
+
+
 
 }

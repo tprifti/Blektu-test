@@ -9,7 +9,7 @@ return array(
         'user' => array(
             'driver' => 'eloquent',
             'table' => 'users',
-						'model' => 'User'
+			'model' => 'User'
         ),
 		'admin' => array(
 			'driver' => 'eloquent',
