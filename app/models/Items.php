@@ -70,9 +70,12 @@ class Items extends Eloquent
         return DB::table('images')->select('image')
             ->where('item_id', $this->id)->first()->image;
     }
+<<<<<<< HEAD
 
     
 
 
 
+=======
+>>>>>>> parent of e47c1a8... Added Edit Item function
 }
