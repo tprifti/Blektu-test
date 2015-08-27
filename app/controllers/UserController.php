@@ -41,13 +41,34 @@ class UserController extends BaseController
 
     public function show($username)
     {
-        $user = $this->user->whereUsername($username)->first();
+       $user = $this->user->whereUsername($username)->first();
 
-        if (!$user) {
-            App::abort(404, 'User not found');
-        }
+        /*if (!$user) {
+            App::abort(404, 'User not found');n/
+        }*/
 
         return View::make('profile', ['user' => $user]);
+    }
+
+    public function destroy(){
+        Auth::user()->logout();
+        return Redirect::to('/');
+    }
+
+    public function getAllItems($id){
+        $user = User::where('id', $id)->first();
+        $uid = User::find($id);
+        $authuser = Auth::user()->get()->id;
+
+        if(intval($authuser)== $uid['id'])
+        {
+            return View::make('test')->with('user', $user);
+
+        } else
+        {
+            return "null";
+        }
+
     }
 
 }

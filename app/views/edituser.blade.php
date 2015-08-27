@@ -1,5 +1,4 @@
-<!--{{ Form::model($user, ['method' => 'PATCH', 'route' => ['admins.edit', $user->id]]) }}-->
-{{ Form::open(array('method' => 'PATCH','route'=> array('admins.update', $user->id))) }}
+{{ Form::model($user, ['method' => 'PATCH', 'route' => ['admins.update', $user->id]]) }}
 
 
 	<div>

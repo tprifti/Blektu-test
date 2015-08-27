@@ -6,7 +6,7 @@ class Items extends Eloquent
     protected $guarded = [
         'id',
     ];
-
+//TEST
 
 
     protected $fillable = [
@@ -25,11 +25,10 @@ class Items extends Eloquent
         'description' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
         'price' => 'required|numeric',
         'brand' => 'required|regex:/(^[A-Za-z0-9 ]+$)+/',
-        'condition_ID' => 'required',
-        'category_ID' => 'required',
-        'color_ID' => 'required',
-        'size_ID' => 'required'
-        
+        'condition_ID' => 'required|exists:conditions,id',
+        'category_ID' => 'required|exists:categories,id',
+        'color_ID' => 'required|exists:colors,id',
+        'size_ID' => 'required|exists:sizes,id'
 
     ];
 
@@ -70,12 +69,9 @@ class Items extends Eloquent
         return DB::table('images')->select('image')
             ->where('item_id', $this->id)->first()->image;
     }
-<<<<<<< HEAD
 
     
 
 
 
-=======
->>>>>>> parent of e47c1a8... Added Edit Item function
 }
