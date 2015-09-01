@@ -26,13 +26,18 @@ class ItemsController extends \BaseController
      */
     public function create()
     {
-        $data = array( 'Category' => Category::lists('category', 'id'),
-                        'Condition' => Condition::lists('type', 'id'),
-                        'Color' => Color::lists('color', 'id'),
-                        'Size' => Size::lists('size', 'id'),
-            );
+        $Category = Category::lists('category', 'id');
+                        $Condition = Condition::lists('type', 'id');
+                        $Color = Color::lists('color', 'id');
+                        $Size = Size::lists('size', 'id');
+            
         
-        return View::make('items.new')->with('data', $data);
+        return View::make('items.new', [
+            'Category' => $Category,
+            'Condition' => $Condition,
+            'Color' => $Color,
+            'Size' => $Size,
+            ]);
         //  return $data;                                   
     }
 

@@ -16,13 +16,13 @@
 {{Form::label('brand','Brand')}}
 {{Form::text('brand')}}
 {{Form::label('category_ID','Category')}}
-  {{Form::select('category_ID', $data)}}
+  {{Form::select('category_ID', $Category)}}
 {{Form::label('condition_ID','Condition')}}
-  {{Form::select('condition_ID', $data)}}
+  {{Form::select('condition_ID', $Condition)}}
 {{Form::label('color_ID','Color')}}
-  {{Form::select('color_ID', $data)}}
+  {{Form::select('color_ID', $Color)}}
 {{Form::label('size_ID','Size')}}
-  {{Form::select('size_ID', $data)}}
+  {{Form::select('size_ID', $Size)}}
 {{Form::submit('Add new item') }}
 
 {{Form::file('image')}}
