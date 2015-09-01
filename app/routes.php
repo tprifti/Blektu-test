@@ -42,7 +42,9 @@ Route::any('/logout', 'UserController@destroy');
 // Laravel HomePage
 Route::get('/', function(){
     return View::make('hello');
+
 });
+
  
  // App special behavior
 App::missing(function ($ex) {
@@ -50,7 +52,7 @@ App::missing(function ($ex) {
 });
 
 /*
- * TODO: Add User Profile Image
+ * TODO: 
  *
  */
 

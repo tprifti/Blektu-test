@@ -5,7 +5,7 @@
 	<title>Add new Item</title>
 </head>
 <body>
-	{{Form::open(['route'=>'new.item'])}}
+	{{Form::open(['route'=>'new.item', 'files' => 'true' ])}}
 
 {{Form::label('name','Name')}}
 {{Form::text('name')}}
@@ -24,6 +24,12 @@
 {{Form::label('size_ID','Size')}}
   {{Form::select('size_ID', $data)}}
 {{Form::submit('Add new item') }}
+
+{{Form::file('image')}}
+
+
+
+{{Form::close()}}
 
 
 

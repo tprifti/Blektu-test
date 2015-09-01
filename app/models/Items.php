@@ -28,7 +28,8 @@ class Items extends Eloquent
         'condition_ID' => 'required|exists:conditions,id',
         'category_ID' => 'required|exists:categories,id',
         'color_ID' => 'required|exists:colors,id',
-        'size_ID' => 'required|exists:sizes,id'
+        'size_ID' => 'required|exists:sizes,id',
+        'image' => 'required|image|mimes:jpeg,bmp,png'
 
     ];
 

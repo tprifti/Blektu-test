@@ -44,17 +44,15 @@ class ItemsController extends \BaseController
      */
     public function store()
     {
+        
         $rules = Items::$rules;
         $validator = Validator::make(Input::all(), $rules);
         if($validator->fails()){
             $messages = $validator->messages();
             return $messages;
         }
-        
         $user = Auth::user();
         $item = new Items;
-        
-         
             $item->user_ID = Auth::user()->get()->id;
             $item->name = Input::get('name');
             $item->description = Input::get('description');
@@ -64,10 +62,23 @@ class ItemsController extends \BaseController
             $item->condition_ID = Input::get('condition_ID');
             $item->color_ID = Input::get('color_ID');
             $item->size_ID = Input::get('size_ID');
+            $item->save();
             
-            $item->save(); 
+        
+         $image = new Foto;
 
-            return " Item Saved";
+        
+            $img = Input::file('image');
+            $filename = time(). '-' .$img->getClientOriginalName();
+            $destinationPath = public_path('img/' . $filename);
+            $a =Image::make($img->getRealPath())->resize('1280', '720')->save($destinationPath);
+            // SAVE TO DB
+            $image->image = 'img/'. $filename;
+            $image->item_id = $item->id;
+            $image->save();
+
+
+            return "Item saved";
             
     }
 
